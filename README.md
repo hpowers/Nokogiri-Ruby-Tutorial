@@ -16,7 +16,7 @@ the process behind many of the thoughts and code in this article, watch the
 screencast.  If you just want the facts, read the article. . .
 
 Read the article:  
-→ <http://HunterPowers.com>
+→ <http://HunterPowers.com/data-scraping-and-more-with-ruby-nokogiri-sinatra-and-heroku/>
 
 Watch the screencast:  
 → <http://www.youtube.com/watch?v=QGC8kdsNvoY>
