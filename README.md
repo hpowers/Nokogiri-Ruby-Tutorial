@@ -15,8 +15,6 @@ There is a screencast that accompanies this article.  If you are interested in
 the process behind many of the thoughts and code in this article, watch the
 screencast.  If you just want the facts, read the article. . .
 
-Read the article:  
-→ <http://HunterPowers.com/data-scraping-and-more-with-ruby-nokogiri-sinatra-and-heroku/>
+→ [Read the article](http://hunterpowers.com/data-scraping-and-more-with-ruby-nokogiri-sinatra-and-heroku/)
 
-Watch the screencast:  
-→ <http://www.youtube.com/watch?v=QGC8kdsNvoY>
+→ [Watch the screencast](http://www.youtube.com/watch?v=PWI1PIvy4A8)
