@@ -7,44 +7,33 @@
 </head>
 <body>
 	<div class="span8">
-    <!-- This is table layout is pulled directly from twitter bootstrap -->
       <table class="table table-striped">
         <thead>
           <tr>
             <th>Date</th>
-            <th>Event</th>
             <th>Time</th>
+            <th>Event</th>
             <th>Price</th>
           </tr>
         </thead>
         <tbody>
         <% @concerts.each do | concert | %>
           <tr>
-          <% price = concert.at_css('.price') %>
-          <% if !price.nil? %>
-          	<td><%= concert.at_css('.date').text %></td>
-          	<td>
-              <!-- This next line targetting the :HREF is new. -->
-              <!-- The first part should seem familiar. We are targetting -->
-              <!-- the first anchor link inside an element with the class -->
-              <!-- '.buy'.  The next bit [:href], tells Nokogiri to extract -->
-              <!-- the href value from the anchor link.  Our ERB tag then  -->
-              <!-- outputs that value to the string.  See if you can figure  -->
-              <!-- out why we are extracting this link by reviewing 930.html -->
-              <a href="<%= concert.at_css('.buy a')[:href] %>">
-                <%= concert.at_css('.event').text %>
+            <td><%= concert[:date]  %></td>
+            <td><%= concert[:time]  %></td>
+          <% unless concert[:soldout] %>
+            <td>
+              <a href="<%= concert[:buy] %>">
+                <%= concert[:title] %>
               </a>
             </td>
-          	<td><%= concert.at_css('.doors').text %></td>
-          	<td><%= price.text %></td>
+            <td><%= concert[:price] %></td>
           <% else %>
-          	<td><%= concert.at_css('.date').text %></td>
-          	<td><del><%= concert.at_css('.event').text %></del></td>
-          	<td><%= concert.at_css('.doors').text %></td>
-          	<td> SOLD OUT </td>
+            <td><del><%= concert[:title] %></del></td>
+            <td>SOLD OUT</td>
           <% end %>
-          </tr>
-         <% end %>
+        </tr>
+      <% end %>
         </tbody>
       </table>
     </div>
