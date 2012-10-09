@@ -8,6 +8,8 @@ get '/' do
   data = Nokogiri::HTML(open(url))
   concertsparser = Nine30ConcertsParser.new data
   @concerts = concertsparser.concerts
+  
+  response.headers['Cache-Control'] = 'public, max-age=3600'
 
   erb :shows
 end
